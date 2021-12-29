@@ -12,7 +12,7 @@
  */
 function createDivWithText(text) {
   const element = document.createElement('div');
-  element.innerText = 'man';
+  element.textContent = text;
   return element;
 }
 
@@ -48,15 +48,15 @@ function prepend(what, where) {
    findAllPSiblings(document.body) // функция должна вернуть массив с элементами div и span т.к. следующим соседом этих элементов является элемент с тегом P
  */
 function findAllPSiblings(where) {
-  const nodeP = [];
+  const nextP = [];
 
   for (const el of where.children) {
     if (el.nextElementSibling && el.nextElementSibling.tagName === 'P') {
-      nodeP.push(el);
+      nextP.push(el);
     }
   }
 
-  return nodeP;
+  return nextP;
 }
 
 /*
